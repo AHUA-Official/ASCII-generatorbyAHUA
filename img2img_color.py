@@ -11,7 +11,7 @@ from utils import get_data
 
 def get_args():
     parser = argparse.ArgumentParser("Image to ASCII")
-    parser.add_argument("--input", type=str, default="data/input.jpg", help="Path to input image")
+    parser.add_argument("--input", type=str, default="data/atc1linghua.jpg", help="Path to input image")
     parser.add_argument("--output", type=str, default="data/output.jpg", help="Path to output text file")
     parser.add_argument("--language", type=str, default="english")
     parser.add_argument("--mode", type=str, default="standard")

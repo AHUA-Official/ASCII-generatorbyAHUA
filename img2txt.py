@@ -9,20 +9,23 @@ import numpy as np
 
 def get_args():
     parser = argparse.ArgumentParser("Image to ASCII")
-    parser.add_argument("--input", type=str, default="data/input.jpg", help="Path to input image")
+    parser.add_argument("--input", type=str, default="data/atc1linghua.jpg", help="Path to input image")
     parser.add_argument("--output", type=str, default="data/output.txt", help="Path to output text file")
-    parser.add_argument("--mode", type=str, default="complex", choices=["simple", "complex"],
+    parser.add_argument("--mode", type=str, default="simple", choices=["simple", "complex"],
                         help="10 or 70 different characters")
     parser.add_argument("--num_cols", type=int, default=150, help="number of character for output's width")
     args = parser.parse_args()
     return args
 
 
+
 def main(opt):
     if opt.mode == "simple":
         CHAR_LIST = '@%#*+=-:. '
     else:
-        CHAR_LIST = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+        CHAR_LIST = '@%#*+=-:. '
+        #CHAR_LIST = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+
     num_chars = len(CHAR_LIST)
     num_cols = opt.num_cols
     image = cv2.imread(opt.input)
